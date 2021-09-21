@@ -19,7 +19,7 @@ final kLabelStyle = TextStyle(
   fontWeight: FontWeight.bold,
   fontFamily: 'OpenSans',
 );
-
+final hoverColor = Colors.white70;
 final kBoxDecorationStyle = BoxDecoration(
   color: Color.fromRGBO(158, 217, 232, 0.1),
   borderRadius: BorderRadius.circular(10.0),

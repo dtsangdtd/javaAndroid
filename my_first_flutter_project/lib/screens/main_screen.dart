@@ -1,7 +1,14 @@
+import 'dart:developer';
+
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_first_flutter_project/screens/component/home_screen.dart';
+import 'package:my_first_flutter_project/screens/component/Location/tracking_location_screen.dart';
+import 'package:my_first_flutter_project/screens/component/chats/chats_screen.dart';
+import 'package:my_first_flutter_project/screens/component/favorite/favorite_screen.dart';
+import 'package:my_first_flutter_project/screens/component/home/home_screen.dart';
+import 'package:my_first_flutter_project/screens/component/shared/drawer.dart';
 import 'package:my_first_flutter_project/utilities/constants.dart';
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: prefer_const_constructors_in_immutables
@@ -21,46 +28,71 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  int pageIndex = 0;
+  List<Widget> pageList = <Widget>[
+    HomeScreen(),
+    FavoriteScreen(),
+    ChatsScreeen(),
+    TrackingLocationScreen()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          elevation: 0.0,
-          backgroundColor: kPrimaryColor,
-          automaticallyImplyLeading: false,
-          title: Text("safetravel.com",
-              style: GoogleFonts.allura(letterSpacing: 2)),
-          leading: Container(
-            width: 50.0,
-            height: 50.0,
-            decoration: ShapeDecoration(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0)),
-              image: DecorationImage(
-                  image: AssetImage("assets/logos/logo-yacht.png")),
+            elevation: 0.0,
+            backgroundColor: kPrimaryColor,
+            automaticallyImplyLeading: false,
+            title: Text("safetravel.com",
+                style: GoogleFonts.allura(letterSpacing: 2)),
+            leading: Container(
+              width: 50.0,
+              height: 50.0,
+              decoration: ShapeDecoration(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0)),
+                image: DecorationImage(
+                    image: AssetImage("assets/logos/logo-yacht.png")),
+              ),
             ),
+            actions: <Widget>[
+              IconButton(
+                  onPressed: () => {print("notification press")},
+                  icon: Icon(
+                    Icons.notifications,
+                    color: Colors.white,
+                    size: 20,
+                  )),
+              Builder(
+                builder: (context) => Container(
+                  child: IconButton(
+                      onPressed: () => {Scaffold.of(context).openEndDrawer()},
+                      icon: Icon(
+                        Icons.menu_outlined,
+                        color: Colors.white,
+                        size: 30.0,
+                      )),
+                ),
+              )
+            ]),
+        endDrawer: NavigationDrawerWidget(),
+        body: PageTransitionSwitcher(
+          transitionBuilder: (child, primaryAnimation, secondaryAnimation) =>
+              FadeThroughTransition(
+            animation: primaryAnimation,
+            secondaryAnimation: secondaryAnimation,
+            child: child,
           ),
-          actions: <Widget>[
-            IconButton(
-                onPressed: () => {print("notification press")},
-                icon: Icon(
-                  Icons.notifications,
-                  color: Colors.white,
-                  size: 20,
-                )),
-            IconButton(
-                onPressed: () => {print("Icon menu press")},
-                icon: Icon(
-                  Icons.menu_outlined,
-                  color: Colors.white,
-                  size: 30.0,
-                )),
-          ],
+          child: pageList[pageIndex],
         ),
-        body: HomeScreen(),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           selectedItemColor: kPrimaryColor,
+          currentIndex: pageIndex,
+          onTap: (value) {
+            setState(() {
+              pageIndex = value;
+            });
+          },
           items: [
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
             BottomNavigationBarItem(
