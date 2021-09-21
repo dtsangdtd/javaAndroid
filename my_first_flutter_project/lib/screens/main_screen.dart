@@ -4,11 +4,12 @@ import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_first_flutter_project/screens/component/Location/tracking_location_screen.dart';
-import 'package:my_first_flutter_project/screens/component/chats/chats_screen.dart';
-import 'package:my_first_flutter_project/screens/component/favorite/favorite_screen.dart';
-import 'package:my_first_flutter_project/screens/component/home/home_screen.dart';
-import 'package:my_first_flutter_project/screens/component/shared/drawer.dart';
+import 'package:my_first_flutter_project/screens/Location/tracking_location_screen.dart';
+import 'package:my_first_flutter_project/screens/chats/chats_screen.dart';
+import 'package:my_first_flutter_project/screens/favorite/favorite_screen.dart';
+import 'package:my_first_flutter_project/screens/home/home_screen.dart';
+import 'package:my_first_flutter_project/screens/shared/drawer.dart';
+
 import 'package:my_first_flutter_project/utilities/constants.dart';
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: prefer_const_constructors_in_immutables

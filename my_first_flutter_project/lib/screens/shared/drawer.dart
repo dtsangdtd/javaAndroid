@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_flutter_project/screens/component/auth/login_screen.dart';
+import 'package:my_first_flutter_project/screens/auth/login_screen.dart';
+
 import 'package:my_first_flutter_project/screens/main_screen.dart';
 import 'package:my_first_flutter_project/utilities/constants.dart';
 

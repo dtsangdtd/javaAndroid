@@ -3,8 +3,7 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_first_flutter_project/screens/component/home/home_screen.dart';
-import 'package:my_first_flutter_project/screens/component/shared/drawer.dart';
+
 import 'package:my_first_flutter_project/utilities/constants.dart';
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: prefer_const_constructors_in_immutables

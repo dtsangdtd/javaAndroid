@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:my_first_flutter_project/screens/auth/register_screen.dart';
 import 'package:my_first_flutter_project/screens/main_screen.dart';
-import 'package:my_first_flutter_project/screens/component/auth/register_screen.dart';
+
 import 'package:my_first_flutter_project/utilities/constants.dart';
 // ignore_for_file: prefer_const_constructors
 // ignore_for_file: prefer_const_constructors_in_immutables

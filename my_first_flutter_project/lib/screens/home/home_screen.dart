@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_first_flutter_project/screens/component/home/inspiration_card.dart';
-import 'package:my_first_flutter_project/screens/component/home/nearby_card.dart';
+import 'package:my_first_flutter_project/component/inspiration_card.dart';
+import 'package:my_first_flutter_project/component/nearby_card.dart';
+
 import 'package:my_first_flutter_project/utilities/constants.dart';
 
 // ignore_for_file: prefer_const_constructors
